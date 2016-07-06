@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nps.websvc.wbapi.repositories.AssetMapper">
+
+	<resultMap type="AssetInfo" id="assetInfoResultMap">
+		<association property="money" javaType="Money" resultMap="moneyResultMap"/>
+		<association property="pokerchip" javaType="Pokerchip" resultMap="pokerchipResultMap"/>
+		<association property="moneySafebox" javaType="MoneySafebox" resultMap="moneySafeboxResultMap"/>
+		<association property="pokerchipSafebox" javaType="PokerchipSafebox" resultMap="pokerchipSafeboxResultMap"/>
+	</resultMap>
+	
+	<resultMap type="Money" id="moneyResultMap">
+		<result property="value" column="cmoney"/>
+		<result property="extValue" column="extmoney"/>
+		<result property="extEndDate" column="extmoneyenddate"/>
+	</resultMap>	
+	
+	<resultMap type="Pokerchip" id="pokerchipResultMap">
+		<result property="value" column="submoney"/>
+		<result property="extValue" column="extsubmoney"/>
+		<result property="extEndDate" column="extsubmoneyenddate"/>
+		<result property="walletValue" column="walletsubmoney"/>
+	</resultMap>
+	
+	<resultMap type="MoneySafebox" id="moneySafeboxResultMap">
+		<result property="value" column="safemoney"/>
+	</resultMap>	
+	
+	<resultMap type="PokerchipSafebox" id="pokerchipSafeboxResultMap">
+		<result property="value" column="safesubmoney"/>
+	</resultMap>	
+	
+    <select id="selectOne" resultMap="assetInfoResultMap">
+		select cmoney, safemoney, extmoney, extmoneyenddate, submoney, walletsubmoney, safesubmoney, extsubmoney, extsubmoneyenddate 
+		from game_money 
+		where usn = #{usn} and msn = 2
+    </select>
+</mapper>

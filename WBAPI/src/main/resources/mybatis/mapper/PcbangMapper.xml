@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nps.websvc.wbapi.repositories.PcbangMapper">
+    <select id="selectOne" resultType="Pcbang">
+    	SELECT pcb_id pcbId
+    	FROM ppc_ipaddr 
+    	WHERE ip_info = #{ip} AND ppc_level = 'PAID' 
+    		AND bitand(to_number(ppc_class, 'XXXXXXXXXXXX'), to_number('000000000200', 'XXXXXXXXXXXX')) = to_number('000000000200', 'XXXXXXXXXXXX')
+    </select>
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<appender name="FILE APPENDE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<prudent>true</prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>applicatoin.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+
+		<encoder>
+			<pattern>%d{yyyy:MM:dd HH:mm:ss.SSS} %-5level --- [%thread]
+				%logger{35} : %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="GELF UDP APPENDER" class="me.moocar.logbackgelf.GelfUDPAppender">
+		<remoteHost>nlog.pmang.com</remoteHost>
+		<port>12201</port>
+		<encoder class="me.moocar.logbackgelf.GZIPEncoder">
+			<layout class="me.moocar.logbackgelf.GelfLayout">
+				<!--An example of overwriting the short message pattern -->
+				<shortMessageLayout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>nemo|review|webapi|%ex{short}%.100m</pattern>
+				</shortMessageLayout>
+				<fullMessageLayout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%-4relative %msg</pattern>
+				</fullMessageLayout>
+				<useLoggerName>true</useLoggerName>
+				<useThreadName>true</useThreadName>
+				<useMarker>true</useMarker>
+				<host>Localhost</host>
+				<additionalField>hostName:_host_name</additionalField>
+				<additionalField>remoteAddress:_remote_address</additionalField>
+				<includeFullMDC>true</includeFullMDC>
+				<staticField class="me.moocar.logbackgelf.Field">
+					<key>_facility</key>
+					<value>GELF</value>
+				</staticField>
+			</layout>
+		</encoder>
+	</appender>
+
+	<logger name="com.nps.websvc.wbapi">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="com.nps.websvc.wbapi.repositories">
+		<level value="DEBUG" />
+	</logger>
+
+	<root level="ERROR">
+		<appender-ref ref="GELF UDP APPENDER" />
+	</root>
+
+</configuration>

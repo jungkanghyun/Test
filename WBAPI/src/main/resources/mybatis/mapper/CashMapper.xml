@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nps.websvc.wbapi.repositories.CashMapper">
+    <select id="selectOne" resultType="Cash">
+      select b.amt_total cash
+      from acnt a, acnt_balance b
+      where a.site_id = 'GMS' and a.site_srl = #{usn}
+        and b.acnt_id = a.acnt_id and b.svc_code = 'PMANG'
+        and a.acnt_status != 'CN' and b.balance_status != 'CN'
+    </select>
+</mapper>

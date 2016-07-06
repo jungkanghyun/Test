@@ -1,0 +1,6 @@
+/application-dev.properties
+/application-live.properties
+/application-qa.properties
+/application-rdy.properties
+/application-tq.properties
+/application.properties

@@ -1,0 +1,232 @@
+{"properties": [
+  {
+    "name": "crypto.host",
+    "type": "java.lang.String",
+    "description": "A description for 'crypto.host'"
+  },
+  {
+    "name": "saygame.max-wait",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.max-wait'"
+  },
+  {
+    "name": "saygame.min-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.min-idle'"
+  },
+  {
+    "name": "saygame.max-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.max-idle'"
+  },
+  {
+    "name": "saygame.max-active",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.max-active'"
+  },
+  {
+    "name": "saygame.initial-size",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.initial-size'"
+  },
+  {
+    "name": "saygame.password",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.password'"
+  },
+  {
+    "name": "saygame.username",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.username'"
+  },
+  {
+    "name": "saygame.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.driver-class-name'"
+  },
+  {
+    "name": "saygame.url",
+    "type": "java.lang.String",
+    "description": "A description for 'saygame.url'"
+  },
+  {
+    "name": "wbapi.redis.host",
+    "type": "java.lang.String",
+    "description": "A description for 'wbapi.redis.host'"
+  },
+  {
+    "name": "wbapi.redis.port",
+    "type": "java.lang.String",
+    "description": "A description for 'wbapi.redis.port'"
+  },
+  {
+    "name": "webapi.redis.max-total",
+    "type": "java.lang.String",
+    "description": "A description for 'webapi.redis.max-total'"
+  },
+  {
+    "name": "webapi.redis.max-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'webapi.redis.max-idle'"
+  },
+  {
+    "name": "webapi.redis.max-wait",
+    "type": "java.lang.String",
+    "description": "A description for 'webapi.redis.max-wait'"
+  },
+  {
+    "name": "webapi.redis.test-on-borrow",
+    "type": "java.lang.String",
+    "description": "A description for 'webapi.redis.test-on-borrow'"
+  },
+  {
+    "name": "klp.redis.host",
+    "type": "java.lang.String",
+    "description": "A description for 'klp.redis.host'"
+  },
+  {
+    "name": "klp.redis.port",
+    "type": "java.lang.String",
+    "description": "A description for 'klp.redis.port'"
+  },
+  {
+    "name": "saymtpk.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.driver-class-name'"
+  },
+  {
+    "name": "saymtpk.url",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.url'"
+  },
+  {
+    "name": "saymtpk.password",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.password'"
+  },
+  {
+    "name": "saymtpk.username",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.username'"
+  },
+  {
+    "name": "saymtpk.initial-size",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.initial-size'"
+  },
+  {
+    "name": "saymtpk.max-active",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.max-active'"
+  },
+  {
+    "name": "saymtpk.max-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.max-idle'"
+  },
+  {
+    "name": "saymtpk.min-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.min-idle'"
+  },
+  {
+    "name": "saymtpk.max-wait",
+    "type": "java.lang.String",
+    "description": "A description for 'saymtpk.max-wait'"
+  },
+  {
+    "name": "saycashweb.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.driver-class-name'"
+  },
+  {
+    "name": "saycashweb.url",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.url'"
+  },
+  {
+    "name": "saycashweb.username",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.username'"
+  },
+  {
+    "name": "saycashweb.password",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.password'"
+  },
+  {
+    "name": "saycashweb.initial-size",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.initial-size'"
+  },
+  {
+    "name": "saycashweb.max-active",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.max-active'"
+  },
+  {
+    "name": "saycashweb.max-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.max-idle'"
+  },
+  {
+    "name": "saycashweb.min-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.min-idle'"
+  },
+  {
+    "name": "saycashweb.max-wait",
+    "type": "java.lang.String",
+    "description": "A description for 'saycashweb.max-wait'"
+  },
+  {
+    "name": "saypcb.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.driver-class-name'"
+  },
+  {
+    "name": "saypcb.url",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.url'"
+  },
+  {
+    "name": "saypcb.username",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.username'"
+  },
+  {
+    "name": "saypcb.password",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.password'"
+  },
+  {
+    "name": "saypcb.max-active",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.max-active'"
+  },
+  {
+    "name": "saypcb.initial-size",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.initial-size'"
+  },
+  {
+    "name": "saypcb.initial-size",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.initial-size'"
+  },
+  {
+    "name": "saypcb.min-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.min-idle'"
+  },
+  {
+    "name": "saypcb.max-idle",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.max-idle'"
+  },
+  {
+    "name": "saypcb.max-wait",
+    "type": "java.lang.String",
+    "description": "A description for 'saypcb.max-wait'"
+  }
+]}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nps.websvc.wbapi.repositories.GameUserMapper">
+    <select id="selectOne" resultType="GameUser">
+	    select gsn, lev
+		    from MTPK_GT_USER 
+    		where usn = #{usn}
+    </select>
+    
+    <select id="getMoneyLimitInfo" parameterType="hashmap" statementType="CALLABLE">
+    	{ call PKG_MOB_UNITY.SP_MONEY_LIMIT_INFO
+	    	(
+		    	#{usn, mode=IN, jdbcType=INTEGER, javaType=int},
+		    	#{msn, mode=IN, jdbcType=INTEGER, javaType=int},
+		    	#{maxSafeMoney, mode=OUT, jdbcType=DOUBLE, javaType=java.lang.Long},
+		    	#{safeMoneyDate, mode=OUT, jdbcType=VARCHAR, javaType=String},
+		    	#{maxMoney, mode=OUT, jdbcType=DOUBLE, javaType=java.lang.Long},
+		    	#{moneyDate, mode=OUT, jdbcType=VARCHAR, javaType=String},
+		    	#{result, mode=OUT, jdbcType=INTEGER, javaType=int}
+	    	)
+    	} 
+    </select>
+    
+    <select id="getSubMoneyLimitInfo" parameterType="hashmap" statementType="CALLABLE">
+    	{ call PKG_MOB_UNITY.SP_SUBMONEY_LIMIT_INFO
+	    	(
+		    	#{usn, mode=IN, jdbcType=INTEGER, javaType=int},
+		    	#{msn, mode=IN, jdbcType=INTEGER, javaType=int},
+		    	#{safeSubmoneyLimit, mode=OUT, jdbcType=DOUBLE, javaType=java.lang.Long},
+		    	#{safeSubmoneyEndDate, mode=OUT, jdbcType=VARCHAR, javaType=String},
+		    	#{ownSubmoneyLimit, mode=OUT, jdbcType=DOUBLE, javaType=java.lang.Long},
+		    	#{submoneyDate, mode=OUT, jdbcType=VARCHAR, javaType=String},
+		    	#{result, mode=OUT, jdbcType=INTEGER, javaType=int}
+	    	)
+    	} 
+    </select>
+</mapper>

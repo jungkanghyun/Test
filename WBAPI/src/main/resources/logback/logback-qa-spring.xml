@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<appender name="GELF UDP APPENDER" class="me.moocar.logbackgelf.GelfUDPAppender">
+		<remoteHost>nlog.pmang.com</remoteHost>
+		<port>12201</port>
+		<encoder class="me.moocar.logbackgelf.GZIPEncoder">
+			<layout class="me.moocar.logbackgelf.GelfLayout">
+				<!--An example of overwriting the short message pattern -->
+				<shortMessageLayout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%ex{short}%.100m</pattern>
+				</shortMessageLayout>
+				<fullMessageLayout class="ch.qos.logback.classic.PatternLayout">
+					<pattern>%-4relative %msg</pattern>
+				</fullMessageLayout>
+				<useLoggerName>true</useLoggerName>
+				<useThreadName>true</useThreadName>
+				<useMarker>true</useMarker>
+				<host>Test</host>
+				<includeFullMDC>false</includeFullMDC>
+				<staticField class="me.moocar.logbackgelf.Field">
+					<key>_facility</key>
+					<value>GELF</value>
+				</staticField>
+			</layout>
+		</encoder>
+	</appender>
+
+	<logger name="com.nps.websvc.wbapi">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="com.nps.websvc.wbapi.repositories">
+		<level value="DEBUG" />
+	</logger>
+
+	<root level="ERROR">
+		<appender-ref ref="GELF UDP APPENDER" />
+	</root>
+
+</configuration>
